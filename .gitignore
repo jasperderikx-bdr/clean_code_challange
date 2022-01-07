@@ -3,7 +3,7 @@
 .mypy_cache/
 
 data/*
-!data/attendance_sheet.csv
+!data/key_tag_logs.csv
 !data/lunch_recipes.csv
 !data/dishwasher_log.csv
 

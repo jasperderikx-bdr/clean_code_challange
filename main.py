@@ -1,15 +1,14 @@
 import pandas as pd
-from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import LinearRegression, RidgeCV
 from datetime import time, datetime
 
-supplies = ["pan", "koekenpan", "rasp", "kom"]
+supplies = ["pan", "rasp", "kom"]
 
 
 def clean(text):
     str_list = text.split()
     str_list = [''.join(e for e in str if e.isalnum()) for str in str_list]
     str_list = [str.lower() for str in str_list]
-
     return str_list
 
 
@@ -22,7 +21,7 @@ def parse_recipes():
 
 
 def parse_attendance_sheet():
-    df = pd.read_csv("data/attendance_sheet.csv")
+    df = pd.read_csv("data/key_tag_logs.csv")
     df['timestamp'] = df.timestamp.apply(lambda x: datetime.strptime(x, '%Y-%m-%d %H:%M:%S'))
     df['date'] = df.timestamp.apply(lambda x: x.date())
     df['time'] = df.timestamp.apply(lambda x: x.time())

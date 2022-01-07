@@ -13,6 +13,7 @@
 -	Introduce explanatory variables (only purpose is to explain)
 -	Replace conditions (in if- or loop-statements) by functions.
 -	No repetition or duplication of code.
+-   Use type annotations (enforce them with mypy).
 
 ### Functions
 -	Small. How small? 
